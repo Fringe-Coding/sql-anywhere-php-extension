@@ -126,6 +126,14 @@ ZEND_BEGIN_ARG_INFO(arginfo_sasql_stmt_bind_result, 0)
   ZEND_ARG_VARIADIC_INFO(1, vars)
 ZEND_END_ARG_INFO()
 
+/* 
+ * With PHP 8, every user visible function must have an arginfo definition block, just defined arginfo_void to silence the warnings!.
+ */
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_void, 0, 0, 0)
+ZEND_END_ARG_INFO()
+
+
 #endif
 
 
@@ -198,77 +206,77 @@ PHP_FUNCTION(sasql_use_result);
  */
 zend_function_entry sqlanywhere_functions[] = {
     	/* connection functions */
-	PHP_FE(sasql_connect,				NULL)
-	PHP_FE(sasql_pconnect,				NULL)
-	PHP_FE(sasql_pconnect_from_sqlca,		NULL)
-	PHP_FE(sasql_close,				NULL)
-	PHP_FE(sasql_query,				NULL)
-	PHP_FE(sasql_real_query,			NULL)
-	PHP_FE(sasql_store_result,			NULL)
-	PHP_FE(sasql_use_result,			NULL)
-	PHP_FE(sasql_next_result,			NULL)
-	PHP_FE(sasql_set_option,			NULL)
-	PHP_FE(sasql_affected_rows,			NULL)
-	PHP_FE(sasql_commit,				NULL)
-	PHP_FE(sasql_rollback,				NULL)
-	PHP_FE(sasql_sqlstate,				NULL)
+	PHP_FE(sasql_connect,				arginfo_void)
+	PHP_FE(sasql_pconnect,				arginfo_void)
+	PHP_FE(sasql_pconnect_from_sqlca,	arginfo_void)
+	PHP_FE(sasql_close,				arginfo_void)
+	PHP_FE(sasql_query,				arginfo_void)
+	PHP_FE(sasql_real_query,			arginfo_void)
+	PHP_FE(sasql_store_result,			arginfo_void)
+	PHP_FE(sasql_use_result,			arginfo_void)
+	PHP_FE(sasql_next_result,			arginfo_void)
+	PHP_FE(sasql_set_option,			arginfo_void)
+	PHP_FE(sasql_affected_rows,			arginfo_void)
+	PHP_FE(sasql_commit,				arginfo_void)
+	PHP_FE(sasql_rollback,				arginfo_void)
+	PHP_FE(sasql_sqlstate,				arginfo_void)
 
 	/* result functions */
 /*	PHP_FE(sasql_field_tell,			NULL) */
-	PHP_FE(sasql_data_seek,				NULL)
-	PHP_FE(sasql_fetch_array,			NULL)
-	PHP_FE(sasql_fetch_assoc,			NULL)
+	PHP_FE(sasql_data_seek,				arginfo_void)
+	PHP_FE(sasql_fetch_array,			arginfo_void)
+	PHP_FE(sasql_fetch_assoc,			arginfo_void)
 /*	PHP_FE(sasql_fetch_field_direct,		NULL) */
-	PHP_FE(sasql_fetch_field,			NULL)
-	PHP_FE(sasql_fetch_object,			NULL)
-	PHP_FE(sasql_fetch_row,				NULL)
-	PHP_FE(sasql_field_seek,			NULL)
-	PHP_FE(sasql_free_result,			NULL)
+	PHP_FE(sasql_fetch_field,			arginfo_void)
+	PHP_FE(sasql_fetch_object,			arginfo_void)
+	PHP_FE(sasql_fetch_row,				arginfo_void)
+	PHP_FE(sasql_field_seek,			arginfo_void)
+	PHP_FE(sasql_free_result,			arginfo_void)
 /*	PHP_FE(sasql_fetch_lengths,			NULL) */
-	PHP_FE(sasql_num_rows,				NULL)
-	PHP_FE(sasql_result_all,			NULL)
+	PHP_FE(sasql_num_rows,				arginfo_void)
+	PHP_FE(sasql_result_all,			arginfo_void)
 
 	/* connection functions */
-	PHP_FE(sasql_error,				NULL)
-	PHP_FE(sasql_errorcode,				NULL)
-	PHP_FE(sasql_insert_id,				NULL)
-	PHP_FE(sasql_message,				NULL)
-	PHP_FE(sasql_prepare, 				NULL)
-	PHP_FE(sasql_field_count,			NULL)
-	PHP_FE(sasql_num_fields,			NULL)
+	PHP_FE(sasql_error,				arginfo_void)
+	PHP_FE(sasql_errorcode,				arginfo_void)
+	PHP_FE(sasql_insert_id,				arginfo_void)
+	PHP_FE(sasql_message,				arginfo_void)
+	PHP_FE(sasql_prepare, 				arginfo_void)
+	PHP_FE(sasql_field_count,			arginfo_void)
+	PHP_FE(sasql_num_fields,			arginfo_void)
 
 	/* statement functions */
-	PHP_FE(sasql_stmt_param_count,			NULL)
+	PHP_FE(sasql_stmt_param_count,			arginfo_void)
 	PHP_FE(sasql_stmt_bind_param_ex,		arginfo_sasql_stmt_bind_param_ex)
 	PHP_FE(sasql_stmt_bind_param,			arginfo_sasql_stmt_bind_param)
-	PHP_FE(sasql_stmt_execute,			NULL)
-	PHP_FE(sasql_stmt_close,			NULL)
-	PHP_FE(sasql_stmt_result_metadata,		NULL)
-	PHP_FE(sasql_stmt_affected_rows,		NULL)
-	PHP_FE(sasql_stmt_num_rows,			NULL)
-	PHP_FE(sasql_stmt_insert_id,			NULL)
+	PHP_FE(sasql_stmt_execute,			arginfo_void)
+	PHP_FE(sasql_stmt_close,			arginfo_void)
+	PHP_FE(sasql_stmt_result_metadata,		arginfo_void)
+	PHP_FE(sasql_stmt_affected_rows,		arginfo_void)
+	PHP_FE(sasql_stmt_num_rows,			arginfo_void)
+	PHP_FE(sasql_stmt_insert_id,			arginfo_void)
 	PHP_FE(sasql_stmt_bind_result,			arginfo_sasql_stmt_bind_result)
-	PHP_FE(sasql_stmt_send_long_data,		NULL)
-	PHP_FE(sasql_stmt_store_result,			NULL)
-	PHP_FE(sasql_stmt_free_result,			NULL)
-	PHP_FE(sasql_stmt_reset,			NULL)
-	PHP_FE(sasql_stmt_fetch,			NULL)
-	PHP_FE(sasql_stmt_field_count,			NULL)
-	PHP_FE(sasql_stmt_data_seek,			NULL)
-	PHP_FE(sasql_stmt_next_result,                  NULL)
-	PHP_FE(sasql_stmt_errno, 			NULL)
-	PHP_FE(sasql_stmt_error, 			NULL)
-	PHP_FE(sasql_stmt_sqlstate, 			NULL)
+	PHP_FE(sasql_stmt_send_long_data,		arginfo_void)
+	PHP_FE(sasql_stmt_store_result,			arginfo_void)
+	PHP_FE(sasql_stmt_free_result,			arginfo_void)
+	PHP_FE(sasql_stmt_reset,			arginfo_void)
+	PHP_FE(sasql_stmt_fetch,			arginfo_void)
+	PHP_FE(sasql_stmt_field_count,			arginfo_void)
+	PHP_FE(sasql_stmt_data_seek,			arginfo_void)
+	PHP_FE(sasql_stmt_next_result,                  arginfo_void)
+	PHP_FE(sasql_stmt_errno, 			arginfo_void)
+	PHP_FE(sasql_stmt_error, 			arginfo_void)
+	PHP_FE(sasql_stmt_sqlstate, 			arginfo_void)
 
 	/* misc functions */
-	PHP_FE(sasql_real_escape_string, 		NULL)
-	PHP_FE(sasql_get_client_info,			NULL)
+	PHP_FE(sasql_real_escape_string, 		arginfo_void)
+	PHP_FE(sasql_get_client_info,			arginfo_void)
 
 
 	/* Aliases */
-	PHP_FALIAS(sasql_disconnect, 			sasql_close,			NULL)
-	PHP_FALIAS(sasql_escape_string, 		sasql_real_escape_string,	NULL)
-	PHP_FALIAS(sasql_multi_query, 			sasql_real_query,		NULL)
+	PHP_FALIAS(sasql_disconnect, 			sasql_close,			arginfo_void)
+	PHP_FALIAS(sasql_escape_string, 		sasql_real_escape_string,	arginfo_void)
+	PHP_FALIAS(sasql_multi_query, 			sasql_real_query,		arginfo_void)
 	{NULL, NULL, NULL}	
 };
 
@@ -323,11 +331,11 @@ static SQLAnywhereInterface api;
 	}
 
 #define ZEND_FETCH_RESOURCE(rsrc, rsrc_type, passed_id, default_id, resource_type_name, resource_type)	\
-	rsrc = (rsrc_type) zend_fetch_resource_ex(&passed_id TSRMLS_CC, resource_type_name, resource_type);	\
+	rsrc = (rsrc_type) zend_fetch_resource_ex(&passed_id , resource_type_name, resource_type);	\
 	ZEND_VERIFY_RESOURCE(rsrc);
 
 #define ZEND_FETCH_RESOURCE2(rsrc, rsrc_type, passed_id, default_id, resource_type_name, resource_type1, resource_type2)	\
-	rsrc = (rsrc_type) zend_fetch_resource2_ex(&passed_id TSRMLS_CC, resource_type_name, resource_type1, resource_type2);	\
+	rsrc = (rsrc_type) zend_fetch_resource2_ex(&passed_id , resource_type_name, resource_type1, resource_type2);	\
 	ZEND_VERIFY_RESOURCE(rsrc);
 #endif
 
@@ -770,11 +778,11 @@ int result_get_column_info( sqlany_result_t * sqlany_result, int col_num, a_sqla
 }
 
 static
-void VerboseErrors( sqlany_connection_t * sqlany_conn TSRMLS_DC )
+void VerboseErrors( sqlany_connection_t * sqlany_conn  )
 /***************************************************************/
 {
     if( sqlany_conn->verbose_errors ) {
-	php_error_docref( NULL TSRMLS_CC, E_WARNING, "SQLAnywhere: [%d] %s", 
+	php_error_docref( NULL , E_WARNING, "SQLAnywhere: [%d] %s", 
 		(int)sqlany_conn->errorcode, sqlany_conn->error );
     }
 }
@@ -999,7 +1007,7 @@ ZEND_RSRC_DTOR_FUNC( sqlany_close_stmt )
 /* {{{ php_sqlany_init_globals 
 */
 static 
-void php_sqlany_init_globals( zend_sqlanywhere_globals * sqlany_globals TSRMLS_DC )
+void php_sqlany_init_globals( zend_sqlanywhere_globals * sqlany_globals  )
 /*********************************************************************************/
 {
     memset( sqlany_globals, 0, sizeof(*sqlany_globals));
@@ -1014,7 +1022,7 @@ PHP_MINIT_FUNCTION(sqlanywhere)
     ts_allocate_id( &sqlanywhere_globals_id, sizeof(zend_sqlanywhere_globals), 
 	    php_sqlany_init_globals, NULL);
 #else
-    php_sqlany_init_globals( &sqlanywhere_globals TSRMLS_CC );
+    php_sqlany_init_globals( &sqlanywhere_globals  );
 #endif
     REGISTER_INI_ENTRIES();
 
@@ -1022,7 +1030,7 @@ PHP_MINIT_FUNCTION(sqlanywhere)
 
     if( !sqlany_initialize_interface( &api, NULL ) ) {
 	_debug_enabled( SQLAnyDebug( _LOCATION_, "Failed to load interface" ) );
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, DBCAPI_NOT_FOUND_ERROR );
+	php_error_docref(NULL , E_WARNING, DBCAPI_NOT_FOUND_ERROR );
     }
     le_conn  = zend_register_list_destructors_ex( sqlany_close_connection, 
 	    NULL, 
@@ -1191,7 +1199,7 @@ void SQLAnywhereConnect( INTERNAL_FUNCTION_PARAMETERS, int persistent )
     sqlany_connection_t * sqlany_conn;
 
     if( !api.initialized ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, DBCAPI_NOT_FOUND_ERROR );
+	php_error_docref(NULL , E_WARNING, DBCAPI_NOT_FOUND_ERROR );
 	RETURN_FALSE;
     }
 
@@ -1243,7 +1251,7 @@ try_again:
 
 	    if( SAG(max_conns) != -1 && 
 		    SAG(num_conns) >= SAG(max_conns)) {
-		php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		php_error_docref(NULL , E_WARNING, 
 			"SQLAnywhere: Too many open connections (%ld)",SAG(num_conns));
 #if PHP_MAJOR_VERSION >= 7
                 zend_string_release( hashed_details );
@@ -1255,7 +1263,7 @@ try_again:
 	    }
 	    if( SAG(max_pconns) != -1 && 
 		    SAG(num_pconns) >= SAG(max_pconns) ) {
-		php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		php_error_docref(NULL , E_WARNING, 
 			"SQLAnywherel:  Too many open persistent connections (%ld)", 
 			SAG(num_pconns) );
 #if PHP_MAJOR_VERSION >= 7
@@ -1303,7 +1311,7 @@ try_again:
 	    if( !api.sqlany_connect( sqlany_conn->handle, Z_STRVAL_PP(arg) ) ) {
 #endif
 		save_conn_error( sqlany_conn );
-		VerboseErrors( sqlany_conn TSRMLS_CC );
+		VerboseErrors( sqlany_conn  );
 		SAG(error_code) = sqlany_conn->errorcode;
 		memcpy( SAG(error), sqlany_conn->error, SACAPI_ERROR_SIZE );
 		strcpy( SAG(sqlstate), sqlany_conn->sqlstate );
@@ -1344,7 +1352,7 @@ try_again:
 	    SAG(num_conns)++;
 	} else { /* we do */	
 	    if( le->type != le_pconn ) {
-		php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		php_error_docref(NULL , E_WARNING, 
 			"SQLAnywhere:  Hashed persistent link is not a SQLAnywhere link!");
 		_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_connect=>FALSE" ) );
 		RETURN_FALSE;
@@ -1366,7 +1374,7 @@ try_again:
 #if PHP_MAJOR_VERSION >= 7
 	sqlany_conn->res = Z_RES_P(zend_list_insert( sqlany_conn, le_pconn ));
 #else
-	sqlany_conn->id = zend_list_insert(sqlany_conn, le_pconn TSRMLS_CC);
+	sqlany_conn->id = zend_list_insert(sqlany_conn, le_pconn );
 #endif
     } else {
 	/* ! persistent */
@@ -1412,7 +1420,7 @@ try_again:
 	}
 	if( SAG(max_conns) != -1 && 
 		SAG(num_conns) >= SAG(max_conns) ) {
-	    php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	    php_error_docref(NULL , E_WARNING, 
 		    "SQLAnywhere: Too many open connections (%ld)",SAG(num_conns));
 #if PHP_MAJOR_VERSION >= 7
             zend_string_release( hashed_details );
@@ -1459,7 +1467,7 @@ try_again:
 	if( !api.sqlany_connect( sqlany_conn->handle, Z_STRVAL_PP(arg) ) ) {
 #endif
 	    save_conn_error( sqlany_conn );
-	    VerboseErrors( sqlany_conn TSRMLS_CC );
+	    VerboseErrors( sqlany_conn  );
 	    SAG(error_code) = sqlany_conn->errorcode;
 	    memcpy( SAG(error), sqlany_conn->error, SACAPI_ERROR_SIZE );
 	    strcpy( SAG(sqlstate), sqlany_conn->sqlstate );
@@ -1476,7 +1484,7 @@ try_again:
 #if PHP_MAJOR_VERSION >= 7
 	sqlany_conn->res = Z_RES_P(zend_list_insert( sqlany_conn, le_conn ));
 #else
-	sqlany_conn->id = zend_list_insert( sqlany_conn,le_conn TSRMLS_CC);
+	sqlany_conn->id = zend_list_insert( sqlany_conn,le_conn );
 #endif
 
 	new_index_ptr.ptr  = (void *) Z_LVAL_P( return_value );
@@ -1537,7 +1545,7 @@ PHP_FUNCTION(sasql_pconnect_from_sqlca)
     zend_rsrc_list_entry * le = NULL;
 
     if( !api.initialized ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, DBCAPI_NOT_FOUND_ERROR );
+	php_error_docref(NULL , E_WARNING, DBCAPI_NOT_FOUND_ERROR );
 	RETURN_FALSE;
     }
 
@@ -1640,7 +1648,7 @@ PHP_FUNCTION(sasql_pconnect_from_sqlca)
 #if PHP_MAJOR_VERSION >= 7
     sqlany_conn->res = Z_RES_P(zend_list_insert( sqlany_conn, le_pconn ));
 #else
-    sqlany_conn->id = zend_list_insert(sqlany_conn, le_pconn TSRMLS_CC);
+    sqlany_conn->id = zend_list_insert(sqlany_conn, le_pconn );
 #endif
 
     SAG( num_pconns )++;
@@ -1696,11 +1704,11 @@ PHP_FUNCTION(sasql_close)
 	    (sqlany_connection_t *)(le->ptr) == sqlany_conn ) {
 #endif
 #if PHP_MAJOR_VERSION >= 7
-	php_error_docref(NULL TSRMLS_CC, E_WARNING,
+	php_error_docref(NULL , E_WARNING,
 		"Supplied argument 1 (%ld) refers to the default connection, which cannot be closed"
 		, Z_LVAL(arg) );
 #else
-	php_error_docref(NULL TSRMLS_CC, E_WARNING,
+	php_error_docref(NULL , E_WARNING,
 		"Supplied argument 1 (%ld) refers to the default connection, which cannot be closed"
 		, Z_LVAL_PP(arg) );
 #endif
@@ -1722,7 +1730,7 @@ PHP_FUNCTION(sasql_close)
 /* }}} */
 
 static
-int sasql_real_query( sqlany_connection_t * sqlany_conn, char * query TSRMLS_DC )
+int sasql_real_query( sqlany_connection_t * sqlany_conn, char * query  )
 /********************************************************************************/
 {
     if( sqlany_conn->last_stmt != NULL ) {
@@ -1749,7 +1757,7 @@ int sasql_real_query( sqlany_connection_t * sqlany_conn, char * query TSRMLS_DC 
     sqlany_conn->last_stmt = api.sqlany_execute_direct( sqlany_conn->handle, query );
     save_conn_error( sqlany_conn );
     if( sqlany_conn->last_stmt == NULL ) {
-	VerboseErrors( sqlany_conn TSRMLS_CC );
+	VerboseErrors( sqlany_conn  );
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " ssasql_real_query=>FALSE [%s]",
 		    sqlany_conn->error ) );
 	return 0;
@@ -1797,9 +1805,9 @@ PHP_FUNCTION(sasql_real_query)
 #endif
 
 #if PHP_MAJOR_VERSION >= 7
-    if( sasql_real_query( sqlany_conn, Z_STRVAL(args[1]) TSRMLS_CC ) ) {
+    if( sasql_real_query( sqlany_conn, Z_STRVAL(args[1])  ) ) {
 #else
-    if( sasql_real_query( sqlany_conn, Z_STRVAL_PP(args[1]) TSRMLS_CC ) ) {
+    if( sasql_real_query( sqlany_conn, Z_STRVAL_PP(args[1])  ) ) {
 #endif
 	RETURN_TRUE;
     } else {
@@ -1863,9 +1871,9 @@ PHP_FUNCTION(sasql_query)
 #endif
 
 #if PHP_MAJOR_VERSION >= 7
-    if( !sasql_real_query( sqlany_conn, Z_STRVAL(args[1]) TSRMLS_CC ) ) {
+    if( !sasql_real_query( sqlany_conn, Z_STRVAL(args[1])  ) ) {
 #else
-    if( !sasql_real_query( sqlany_conn, Z_STRVAL_PP(args[1]) TSRMLS_CC ) ) {
+    if( !sasql_real_query( sqlany_conn, Z_STRVAL_PP(args[1])  ) ) {
 #endif
 	RETURN_FALSE;
     }
@@ -1879,7 +1887,7 @@ PHP_FUNCTION(sasql_query)
 #if PHP_MAJOR_VERSION >= 7
     sqlany_result->res = Z_RES_P(zend_list_insert( sqlany_result, le_result ));
 #else
-    sqlany_result->id = zend_list_insert( sqlany_result, le_result TSRMLS_CC); 
+    sqlany_result->id = zend_list_insert( sqlany_result, le_result ); 
 #endif
     sqlany_result->sqlany_conn = sqlany_conn;
     sqlany_result->stmt_handle = sqlany_conn->last_stmt;
@@ -1975,12 +1983,12 @@ PHP_FUNCTION(sasql_store_result)
 #endif
 
     if( sqlany_conn->last_stmt == NULL ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "No previous result to store" );
+	php_error_docref(NULL , E_WARNING, "No previous result to store" );
 	RETURN_FALSE;
     }
 
     if( api.sqlany_num_cols( sqlany_conn->last_stmt ) == 0 ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "Previous query does not return a result" );
+	php_error_docref(NULL , E_WARNING, "Previous query does not return a result" );
 	RETURN_FALSE;
     }
 
@@ -1989,7 +1997,7 @@ PHP_FUNCTION(sasql_store_result)
 #if PHP_MAJOR_VERSION >= 7
     sqlany_result->res = Z_RES_P(zend_list_insert( sqlany_result, le_result ));
 #else
-    sqlany_result->id = zend_list_insert( sqlany_result, le_result TSRMLS_CC); 
+    sqlany_result->id = zend_list_insert( sqlany_result, le_result ); 
 #endif
     sqlany_result->sqlany_conn = sqlany_conn;
     sqlany_result->stmt_handle = sqlany_conn->last_stmt;
@@ -2069,12 +2077,12 @@ PHP_FUNCTION(sasql_use_result)
 #endif
 
     if( sqlany_conn->last_stmt == NULL ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "No previous result to store" );
+	php_error_docref(NULL , E_WARNING, "No previous result to store" );
 	RETURN_FALSE;
     }
 
     if( api.sqlany_num_cols( sqlany_conn->last_stmt ) == 0 ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "Previous query does not return a result" );
+	php_error_docref(NULL , E_WARNING, "Previous query does not return a result" );
 	RETURN_FALSE;
     }
 
@@ -2083,7 +2091,7 @@ PHP_FUNCTION(sasql_use_result)
 #if PHP_MAJOR_VERSION >= 7
     sqlany_result->res = Z_RES_P(zend_list_insert( sqlany_result, le_result ));
 #else
-    sqlany_result->id = zend_list_insert( sqlany_result, le_result TSRMLS_CC); 
+    sqlany_result->id = zend_list_insert( sqlany_result, le_result ); 
 #endif
     sqlany_result->sqlany_conn = sqlany_conn;
     sqlany_result->stmt_handle = sqlany_conn->last_stmt;
@@ -2136,7 +2144,7 @@ PHP_FUNCTION(sasql_next_result)
 #endif
 
     if( sqlany_conn->last_stmt == NULL ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "No previous result to store" );
+	php_error_docref(NULL , E_WARNING, "No previous result to store" );
 	RETURN_FALSE;
     }
 
@@ -2154,7 +2162,7 @@ PHP_FUNCTION(sasql_next_result)
 #if PHP_MAJOR_VERSION >= 7
         sqlany_result->res = Z_RES_P(zend_list_insert( sqlany_result, le_result ));
 #else
-	sqlany_result->id = zend_list_insert( sqlany_result, le_result TSRMLS_CC); 
+	sqlany_result->id = zend_list_insert( sqlany_result, le_result ); 
 #endif
 	sqlany_result->sqlany_conn = sqlany_conn;
 	sqlany_result->next = sqlany_conn->result_list;
@@ -2234,7 +2242,7 @@ PHP_FUNCTION(sasql_data_seek)
 #endif
 
     if( !sqlany_result->result_cached ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"sasql_data_seek() cannot be used with a result object returned from sasql_use_result()" );
 	RETURN_FALSE;
     }
@@ -2361,7 +2369,7 @@ PHP_FUNCTION(sasql_field_seek)
 #endif
 
     if( col_num < 0 || col_num >= sqlany_result->num_cols ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"SQLAnywhere: Bad column offset (%d) min = 0, max = %d", col_num, sqlany_result->num_cols -1 );
 	RETURN_FALSE;
     }
@@ -2421,7 +2429,7 @@ PHP_FUNCTION(sasql_fetch_field)
 
 	case 2:
 	    if( col_num < 0 || col_num >= sqlany_result->num_cols ) {
-		php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		php_error_docref(NULL , E_WARNING, 
 			"SQLAnywhere: Bad column offset (%d) min = 0, max = %d", col_num, sqlany_result->num_cols -1 );
 		RETURN_FALSE;
 	    }
@@ -2437,9 +2445,9 @@ PHP_FUNCTION(sasql_fetch_field)
 	RETURN_FALSE;
     }
 
-    if( object_init( return_value ) == FAILURE ) {
-	RETURN_FALSE;
-    }
+    // if( object_init( return_value ) == FAILURE ) {
+	// RETURN_FALSE;
+    // }
 
 #if PHP_MAJOR_VERSION >= 7
     #define sqlany_add_property_string_dup(__arg, __key, __str) \
@@ -2901,7 +2909,7 @@ PHP_FUNCTION(sasql_commit)
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_commit=>SUCCESS" ) );
 	RETURN_TRUE;
     } else {
-	VerboseErrors( sqlany_conn TSRMLS_CC );
+	VerboseErrors( sqlany_conn  );
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_commit=>FALSE" ) );
 	RETURN_FALSE;
     }
@@ -2934,7 +2942,7 @@ PHP_FUNCTION(sasql_rollback)
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_rollback=>SUCCESS" ) );
 	RETURN_TRUE;
     } else {
-	VerboseErrors( sqlany_conn TSRMLS_CC );
+	VerboseErrors( sqlany_conn  );
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_rollback=>FALSE" ) );
 	RETURN_FALSE;
     }
@@ -3082,7 +3090,7 @@ PHP_FUNCTION(sasql_set_option)
 			    if( api.sqlany_execute_immediate( sqlany_conn->handle, sql ) ) {
 				RETURN_TRUE;
 			    } else {
-				VerboseErrors( sqlany_conn TSRMLS_CC );
+				VerboseErrors( sqlany_conn  );
 				RETURN_FALSE;
 			    }
 			}
@@ -3114,9 +3122,9 @@ PHP_FUNCTION(sasql_set_option)
     }
 
 #if PHP_MAJOR_VERSION >= 7
-    php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unknown option (%s)", Z_STRVAL(args[1]) );
+    php_error_docref(NULL , E_WARNING, "Unknown option (%s)", Z_STRVAL(args[1]) );
 #else
-    php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unknown option (%s)", Z_STRVAL_PP(args[1]) );
+    php_error_docref(NULL , E_WARNING, "Unknown option (%s)", Z_STRVAL_PP(args[1]) );
 #endif
     _debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_set_option=>FALSE" ) );
     RETURN_FALSE;
@@ -3313,7 +3321,7 @@ PHP_FUNCTION(sasql_message)
     if( rc ) {
 	RETURN_TRUE;
     } else {
-	VerboseErrors( sqlany_conn TSRMLS_CC );
+	VerboseErrors( sqlany_conn  );
 	RETURN_FALSE;
     }
 }
@@ -3360,7 +3368,7 @@ PHP_FUNCTION(sasql_prepare)
     save_conn_error( sqlany_conn );
     if( sqlany_stmt->handle == NULL ) {
 	/* failed to prepare */
-	VerboseErrors( sqlany_conn TSRMLS_CC );
+	VerboseErrors( sqlany_conn  );
 	efree( sqlany_stmt );
 	_debug_enabled( SQLAnyDebug( _LOCATION_, 
 		    " sasql_query=>FALSE [%s]", sqlany_conn->error ); )
@@ -3370,7 +3378,7 @@ PHP_FUNCTION(sasql_prepare)
 #if PHP_MAJOR_VERSION >= 7
     sqlany_stmt->res = Z_RES_P(zend_list_insert( sqlany_stmt, le_stmt ));
 #else
-    sqlany_stmt->id = zend_list_insert( sqlany_stmt, le_stmt TSRMLS_CC);
+    sqlany_stmt->id = zend_list_insert( sqlany_stmt, le_stmt );
 #endif
     sqlany_stmt->sqlany_conn = sqlany_conn;
     sqlany_stmt->num_params = api.sqlany_num_params( sqlany_stmt->handle );
@@ -3455,12 +3463,12 @@ PHP_FUNCTION(sasql_stmt_bind_param)
 
 #if PHP_MAJOR_VERSION >= 7
     if( ZEND_NUM_ARGS() - 2 != Z_STRLEN( args[1] ) ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"The num of type characters supplied (%d) does not match the number of parameters supplied (%d)",  
 		Z_STRLEN(args[1]), ZEND_NUM_ARGS() - 2 );
 #else
     if( ZEND_NUM_ARGS() - 2 != Z_STRLEN_PP(args[1] ) ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"The num of type characters supplied (%d) does not match the number of parameters supplied (%d)",  
 		Z_STRLEN_PP( args[1]), ZEND_NUM_ARGS() - 2 );
 #endif
@@ -3469,7 +3477,7 @@ PHP_FUNCTION(sasql_stmt_bind_param)
     }
 
     if( (ZEND_NUM_ARGS() -2) > sqlany_stmt->num_params ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"More parameters supplied (%d) than expected (%d)", ZEND_NUM_ARGS() - 2, sqlany_stmt->num_params );
 	efree( args );
 	RETURN_FALSE;
@@ -3487,7 +3495,7 @@ PHP_FUNCTION(sasql_stmt_bind_param)
 	    case 'd': case 'i': case 'b': case 's':
 		break;
 	    default:
-		php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		php_error_docref(NULL , E_WARNING, 
 			"Undefined fieldtype %c (parameter %d)", field_type, i+1 );
 		efree( args );
 		RETURN_FALSE;
@@ -3721,7 +3729,7 @@ PHP_FUNCTION(sasql_stmt_bind_param)
 		case 'b': param.value.type = A_BINARY; break;
 		case 's': param.value.type = A_STRING; break;
 		default:
-		    php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		    php_error_docref(NULL , E_WARNING, 
 			    "Undefined fieldtype %c (parameter %d)", field_type, i+1 );
 		    efree( args );
 		    RETURN_FALSE;
@@ -3761,7 +3769,7 @@ PHP_FUNCTION(sasql_stmt_bind_param)
 		    param.value.length = &(sqlany_stmt->sqlany_params[param_number].in_len);
 		    break;
 		default:
-		    php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		    php_error_docref(NULL , E_WARNING, 
 			    "Undefined fieldtype %c (parameter %d)", field_type, i+1 );
 		    efree( args );
 		    RETURN_FALSE;
@@ -3851,7 +3859,7 @@ PHP_FUNCTION(sasql_stmt_bind_param_ex)
 		    param.direction = DD_INPUT_OUTPUT;
 		    break;
 		default:
-		    php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		    php_error_docref(NULL , E_WARNING, 
 			    "Argument 6 is not valid. Direction could only be 1,2, or 3"  );
 		    RETURN_FALSE;
 	    }
@@ -3884,7 +3892,7 @@ PHP_FUNCTION(sasql_stmt_bind_param_ex)
 #endif
 
     if( param_number >= sqlany_stmt->num_params ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Argument 2 (%d) is not valid. Expecting a number between 0 and %d", 
 		param_number, sqlany_stmt->num_params - 1 );
 	RETURN_FALSE;
@@ -3898,7 +3906,7 @@ PHP_FUNCTION(sasql_stmt_bind_param_ex)
     ok = api.sqlany_describe_bind_param( sqlany_stmt->handle, param_number, &desc_info );
     save_stmt_error( sqlany_stmt );
     if( !ok ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Failed to find information about statement parameters" );
 	RETURN_FALSE;
     }
@@ -4028,10 +4036,10 @@ PHP_FUNCTION(sasql_stmt_bind_param_ex)
 #endif
 	default:
 #if PHP_MAJOR_VERSION >= 7
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Unrecognized type information '%s'.", Z_STRVAL(args[3]) );
 #else
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Unrecognized type information '%s'.", Z_STRVAL_PP(args[3]) );
 #endif
 	RETURN_FALSE;
@@ -4124,7 +4132,7 @@ PHP_FUNCTION(sasql_stmt_execute)
 	    rc = api.sqlany_describe_bind_param( sqlany_stmt->handle, i, &desc_info );
 	    save_stmt_error( sqlany_stmt );
 	    if( !rc ) {
-		php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+		php_error_docref(NULL , E_WARNING, 
 			"Failed to find information about statement parameters" );
 		RETURN_FALSE;
 	    }
@@ -4248,7 +4256,7 @@ PHP_FUNCTION(sasql_stmt_execute)
     save_stmt_error( sqlany_stmt );
     if( rc == 0 ) {
 	if( sqlany_conn->verbose_errors ) {
-	    php_error_docref( NULL TSRMLS_CC, E_WARNING, "SQLAnywhere: [%d] %s", 
+	    php_error_docref( NULL , E_WARNING, "SQLAnywhere: [%d] %s", 
 		    (int)sqlany_stmt->errorcode, sqlany_stmt->error );
 	}
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_stmt_execute=>FALSE [%s]", 
@@ -4263,7 +4271,7 @@ PHP_FUNCTION(sasql_stmt_execute)
 #if PHP_MAJOR_VERSION >= 7
 	sqlany_result->res = Z_RES_P(zend_list_insert( sqlany_result, le_result ));
 #else
-	sqlany_result->id = zend_list_insert( sqlany_result, le_result TSRMLS_CC);
+	sqlany_result->id = zend_list_insert( sqlany_result, le_result );
 #endif
 	sqlany_result->sqlany_conn = sqlany_conn;
 	sqlany_result->next = sqlany_conn->result_list;
@@ -4472,14 +4480,14 @@ PHP_FUNCTION(sasql_stmt_bind_result)
 
     num_cols = api.sqlany_num_cols( sqlany_stmt->handle );
     if( num_cols == 0 ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Supplied statement does not return a result set" );
 	efree( args );
 	RETURN_FALSE;
     }
 
     if( (ZEND_NUM_ARGS() -1) > num_cols ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"More variables (%d) supplied than can be bound (%d)", ZEND_NUM_ARGS() -1, num_cols );
 	efree( args );
 	RETURN_FALSE;
@@ -4549,10 +4557,10 @@ PHP_FUNCTION(sasql_stmt_send_long_data)
 
     if( i >= sqlany_stmt->num_params ) {
 #if PHP_MAJOR_VERSION >= 7
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Supplied argument 2 (%ld) is not a valid parameter number", Z_LVAL(args[1]) );
 #else
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Supplied argument 2 (%ld) is not a valid parameter number", Z_LVAL_PP(args[1]) );
 #endif
 	RETURN_FALSE;
@@ -4569,7 +4577,7 @@ PHP_FUNCTION(sasql_stmt_send_long_data)
 #else
     if( sqlany_stmt->php_params[i].in == NULL ) {
 #endif
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Parameter number %d must be bound first using sasql_stmt_bind_param", i+1 );
 	RETURN_FALSE;
     }
@@ -4811,12 +4819,12 @@ PHP_FUNCTION(sasql_stmt_data_seek)
     ZEND_FETCH_RESOURCE( sqlany_stmt, sqlany_stmt_t*, args[0], -1, "SQLAnywhere statement", le_stmt );
 
     if( sqlany_stmt->sqlany_result == NULL ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Statement does not generate a result set" );
 	RETURN_FALSE;
     }
     if( sqlany_stmt->sqlany_result->curr_row == NULL ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+	php_error_docref(NULL , E_WARNING, 
 		"Must call sasql_stmt_store_result() before attempting to call sasql_stmt_data_seek()" );
 	RETURN_FALSE;
     }
@@ -4825,10 +4833,10 @@ PHP_FUNCTION(sasql_stmt_data_seek)
 
 #if PHP_MAJOR_VERSION >= 7
     if( Z_LVAL(args[1]) >= sqlany_result->num_rows ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "Invalid seek offset (%ld)", Z_LVAL(args[1]) );
+	php_error_docref(NULL , E_WARNING, "Invalid seek offset (%ld)", Z_LVAL(args[1]) );
 #else
     if( Z_LVAL_PP(args[1]) >= sqlany_result->num_rows ) {
-	php_error_docref(NULL TSRMLS_CC, E_WARNING, "Invalid seek offset (%ld)", Z_LVAL_PP(args[1]) );
+	php_error_docref(NULL , E_WARNING, "Invalid seek offset (%ld)", Z_LVAL_PP(args[1]) );
 #endif
 	RETURN_FALSE;
     }
@@ -4877,7 +4885,7 @@ PHP_FUNCTION(sasql_stmt_next_result)
 #if PHP_MAJOR_VERSION >= 7
 	sqlany_result->res = Z_RES_P(zend_list_insert( sqlany_result, le_result ));
 #else
-	sqlany_result->id = zend_list_insert( sqlany_result, le_result TSRMLS_CC); 
+	sqlany_result->id = zend_list_insert( sqlany_result, le_result ); 
 #endif
 	sqlany_result->sqlany_conn = sqlany_stmt->sqlany_conn;
 	sqlany_result->next = sqlany_stmt->sqlany_conn->result_list;
@@ -5251,7 +5259,7 @@ PHP_FUNCTION(sasql_result_all)
     }
 
     if( sqlany_result->num_cols == 0 ) {
-	//php_error_docref(NULL TSRMLS_CC, E_WARNING, "No DATA available " );
+	//php_error_docref(NULL , E_WARNING, "No DATA available " );
 	_debug_enabled( SQLAnyDebug( _LOCATION_, " sasql_result_all returned error2" ) );
 	RETURN_FALSE;
     }
@@ -5337,7 +5345,7 @@ PHP_FUNCTION(sasql_result_all)
 		switch( dvalue.type ) {
 		    case A_STRING:
 		    case A_BINARY:
-			php_write((char *)dvalue.buffer, *(dvalue.length) TSRMLS_CC );
+			php_write((char *)dvalue.buffer, *(dvalue.length)  );
 			break;
 
 		    case A_VAL32:
